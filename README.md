@@ -91,7 +91,7 @@ dotnet build
 dotnet run
 ```
 
-Then open your browser and visit 👉 https://localhost:5001
+### Then open your browser and visit 👉 https://localhost:5001
  (or as shown in terminal).
 ---
 ## 🧠 Learning Outcomes
