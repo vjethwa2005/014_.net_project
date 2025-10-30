@@ -79,10 +79,10 @@ Then open your browser and visit 👉 https://localhost:5001
 ---
 ## 🧠 Learning Outcomes
 
-Gained practical understanding of the MVC architecture.
+- Gained practical understanding of the MVC architecture.
 
-Learned how to integrate Entity Framework for database operations.
+- Learned how to integrate Entity Framework for database operations.
 
-Implemented user authentication and data validation in ASP.NET Core.
+- Implemented user authentication and data validation in ASP.NET Core.
 
-Applied UI design concepts for a professional web interface.
+- Applied UI design concepts for a professional web interface.
