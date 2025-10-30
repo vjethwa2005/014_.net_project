@@ -1,41 +1,45 @@
 # ===========================================
 # .NET & ASP.NET Core Ignore Rules
 # ===========================================
+
+# Build output
 bin/
 obj/
+out/
+artifacts/
+
+# User-specific files
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
-.vs/
-wwwroot/lib/
-project.lock.json
-project.fragment.lock.json
-artifacts/
 
-# Ignore environment & secret files
+# IDE folders
+.vs/
+.idea/
+
+# ===========================================
+# Environment & Config Files
+# ===========================================
 appsettings.Development.json
 .env
 *.local.json
+secrets.json
 
-# Ignore publish outputs
+# Publish output
 publish/
-out/
 
-# Ignore logs and backups
+# ===========================================
+# Logs, Backups, and Temp Files
+# ===========================================
 *.log
 *.bak
 *.tmp
 *.swp
 
-# Ignore system files
+# ===========================================
+# System and OS Files
+# ===========================================
 Thumbs.db
 .DS_Store
 
-# ===========================================
-# Replit & AI Metadata (Hide from Repo)
-# ===========================================
-replit.md
-.replit
-*.replit-config
-.replit-cache/
