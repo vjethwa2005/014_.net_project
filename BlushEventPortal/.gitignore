@@ -1,60 +1,41 @@
-## .NET Core
-
+# ===========================================
+# .NET & ASP.NET Core Ignore Rules
+# ===========================================
 bin/
 obj/
 *.user
 *.suo
-*.userprefs
-*.pidb
-*.mdb
-*.log
-*.dll
-*.exe
-*.pdb
-
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Bb]in/
-[Oo]bj/
-
-# Database files
-*.db
-*.db-shm
-*.db-wal
-
-# Visual Studio cache/options
-.vs/
-.vscode/
-
-# User-specific files
-*.rsuser
-*.user
 *.userosscache
 *.sln.docstates
+.vs/
+wwwroot/lib/
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
-# NuGet
-*.nupkg
-*.snupkg
-packages/
-.nuget/
+# Ignore environment & secret files
+appsettings.Development.json
+.env
+*.local.json
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
+# Ignore publish outputs
+publish/
+out/
 
-# Node (for any frontend tools)
-node_modules/
-npm-debug.log
+# Ignore logs and backups
+*.log
+*.bak
+*.tmp
+*.swp
 
-# Rider
-.idea/
-
-# macOS
+# Ignore system files
+Thumbs.db
 .DS_Store
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# ===========================================
+# Replit & AI Metadata (Hide from Repo)
+# ===========================================
+replit.md
+.replit
+*.replit-config
+.replit-cache/
