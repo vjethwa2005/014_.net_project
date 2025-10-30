@@ -63,14 +63,16 @@ cd BlushEventPortal
 ```
 
 ### 2. Restore dependencies
+```
 dotnet restore
-
+```
 ### 3. Build the project
 dotnet build
 
 ### 4. Run the application
+```
 dotnet run
-
+```
 
 Then open your browser and visit 👉 https://localhost:5001
  (or as shown in terminal).
