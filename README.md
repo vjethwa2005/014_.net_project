@@ -40,7 +40,7 @@ The project features a **modern pink-themed UI** designed for smooth user experi
 ---
 
 ## 🏗️ Project Structure
-
+```
 BlushEventPortal/
 │
 ├── Controllers/ # MVC Controllers (Event, RSVP, Home, Contact)
@@ -51,7 +51,7 @@ BlushEventPortal/
 ├── Services/ # Utility or helper services
 ├── appsettings.json # Configuration settings
 └── Program.cs # Entry point of the application
-
+```
 ---
 
 ## 🚀 How to Run Locally
