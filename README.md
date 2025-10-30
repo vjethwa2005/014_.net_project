@@ -42,16 +42,15 @@ The project features a **modern pink-themed UI** designed for smooth user experi
 ## 🖼️ Project Screenshots
 
 ### 🏠 Home Page
-![Screenshot](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a996f083-c3bc-4403-9f3f-ccc8a7a488ce" />
-)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a996f083-c3bc-4403-9f3f-ccc8a7a488ce" />
 
 ### 📅 Events Page
-![Screenshot](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3bc72f7-2380-4cdc-a108-a4ef4be6f3d3" />
-)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3bc72f7-2380-4cdc-a108-a4ef4be6f3d3" />
+
 
 ### 💌 RSVP Page
-![Screenshot](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cc1b499a-ea19-4280-bfd3-6306b78c6083" />
-)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cc1b499a-ea19-4280-bfd3-6306b78c6083" />
+
 
 ---
 
