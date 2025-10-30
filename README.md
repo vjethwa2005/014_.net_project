@@ -44,11 +44,11 @@ The project features a **modern pink-themed UI** designed for smooth user experi
 ### 🏠 Home Page
 <img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/b410282e-d705-433e-bf84-0800019497eb" />
 
---
+---
 
 ### 📅 Events Page
 <img width="1906" height="925" alt="image" src="https://github.com/user-attachments/assets/ec180c74-ec1e-45f5-9b26-bca65e0d80e0" />
---
+---
 
 ### 💌 RSVP Page
 <img width="1899" height="934" alt="image" src="https://github.com/user-attachments/assets/730432e5-791a-4330-9b57-8cd9b2c69d15" />
