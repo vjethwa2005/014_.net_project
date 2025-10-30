@@ -1,0 +1,59 @@
+@model IEnumerable<BlushEventPortal.Data.RSVP>
+
+@{
+    ViewData["Title"] = "My RSVPs";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4" style="color: var(--dark-pink);">
+        <i class="fas fa-ticket-alt"></i> My RSVPs
+    </h2>
+    
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            <i class="fas fa-info-circle"></i> You haven't RSVP'd to any events yet.
+            <a asp-controller="Event" asp-action="Index" class="alert-link">Browse events</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var rsvp in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-calendar-check"></i> RSVP'd on @rsvp.RSVPDate.ToString("MMM dd, yyyy")
+                        </div>
+                        <div class="card-body">
+                            @if (!string.IsNullOrEmpty(rsvp.Event.ImageUrl))
+                            {
+                                <img src="@rsvp.Event.ImageUrl" class="img-fluid rounded mb-3" style="max-height: 200px; width: 100%; object-fit: cover;" alt="@rsvp.Event.Name">
+                            }
+                            <h5 class="event-title">@rsvp.Event.Name</h5>
+                            <p class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                @rsvp.Event.EventDate.ToString("MMMM dd, yyyy 'at' hh:mm tt")
+                            </p>
+                            <p class="event-venue">
+                                <i class="fas fa-map-marker-alt"></i>
+                                @rsvp.Event.Venue
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <a asp-controller="Event" asp-action="Details" asp-route-id="@rsvp.Event.Id" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-eye"></i> View Event
+                                </a>
+                                <form asp-action="Cancel" asp-route-id="@rsvp.Id" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to cancel this RSVP?');">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-times"></i> Cancel RSVP
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

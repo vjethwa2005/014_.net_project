@@ -1,0 +1,113 @@
+@model BlushEventPortal.Data.Event
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<BlushEventPortal.Data.ApplicationUser> SignInManager
+@inject UserManager<BlushEventPortal.Data.ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = Model.Name;
+    var userId = UserManager.GetUserId(User);
+    var hasRSVPd = Model.RSVPs.Any(r => r.UserId == userId);
+    var isFull = Model.RSVPs.Count >= Model.Capacity;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name" style="height: 400px; object-fit: cover;">
+                }
+                <div class="card-body">
+                    <h2 class="event-title"><i class="fas fa-star"></i> @Model.Name</h2>
+                    <div class="mb-3">
+                        <span class="badge badge-pink">
+                            <i class="fas fa-calendar-alt"></i> @Model.EventDate.ToString("MMMM dd, yyyy 'at' hh:mm tt")
+                        </span>
+                    </div>
+                    <p class="event-venue mb-3">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <strong>Venue:</strong> @Model.Venue
+                    </p>
+                    <hr>
+                    <h5 style="color: var(--dark-pink);">About This Event</h5>
+                    <p class="lead">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-info-circle"></i> Event Information
+                </div>
+                <div class="card-body">
+                    <p><strong>Date:</strong><br>@Model.EventDate.ToString("dddd, MMMM dd, yyyy")</p>
+                    <p><strong>Time:</strong><br>@Model.EventDate.ToString("hh:mm tt")</p>
+                    <p><strong>Venue:</strong><br>@Model.Venue</p>
+                    <p><strong>Capacity:</strong><br>@Model.RSVPs.Count / @Model.Capacity attendees</p>
+                    
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        @if (hasRSVPd)
+                        {
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle"></i> You're registered for this event!
+                            </div>
+                        }
+                        else if (isFull)
+                        {
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle"></i> This event is full
+                            </div>
+                        }
+                        else
+                        {
+                            <form asp-controller="RSVP" asp-action="Create" method="post">
+                                <input type="hidden" name="eventId" value="@Model.Id" />
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-ticket-alt"></i> RSVP Now
+                                </button>
+                            </form>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Please <a asp-area="Identity" asp-page="/Account/Login">login</a> to RSVP
+                        </div>
+                    }
+                </div>
+            </div>
+            
+            @if (Model.RSVPs.Any())
+            {
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i> Attendees (@Model.RSVPs.Count)
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            @foreach (var rsvp in Model.RSVPs.Take(10))
+                            {
+                                <li class="mb-2">
+                                    <i class="fas fa-user-circle"></i> @(rsvp.User.FirstName ?? rsvp.User.Email)
+                                </li>
+                            }
+                        </ul>
+                        @if (Model.RSVPs.Count > 10)
+                        {
+                            <p class="text-muted">+ @(Model.RSVPs.Count - 10) more...</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Events
+        </a>
+    </div>
+</div>
