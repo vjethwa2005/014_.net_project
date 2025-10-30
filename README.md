@@ -40,3 +40,47 @@ The project features a **modern pink-themed UI** designed for smooth user experi
 ---
 
 ## 🏗️ Project Structure
+
+BlushEventPortal/
+│
+├── Controllers/ # MVC Controllers (Event, RSVP, Home, Contact)
+├── Models/ # Entity classes for Event and RSVP
+├── Views/ # Razor Views (UI pages)
+├── wwwroot/ # Static files (CSS, JS, Images)
+├── Data/ # Database context and migrations
+├── Services/ # Utility or helper services
+├── appsettings.json # Configuration settings
+└── Program.cs # Entry point of the application
+
+---
+
+## 🚀 How to Run Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/BlushEventPortal.git
+cd BlushEventPortal
+```
+
+### 2. Restore dependencies
+dotnet restore
+
+### 3. Build the project
+dotnet build
+
+### 4. Run the application
+dotnet run
+
+
+Then open your browser and visit 👉 https://localhost:5001
+ (or as shown in terminal).
+---
+## 🧠 Learning Outcomes
+
+Gained practical understanding of the MVC architecture.
+
+Learned how to integrate Entity Framework for database operations.
+
+Implemented user authentication and data validation in ASP.NET Core.
+
+Applied UI design concepts for a professional web interface.
